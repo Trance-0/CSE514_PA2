@@ -1,0 +1,9 @@
+KNN:
+
+I will use different neighbor counts for KNN. I'll test values n_neighbors=[3,5,9,17,21,33]
+
+Random Forest:
+
+I will use the number of trees. I'll test values n_estimators=[1,2,4,8,16,32,64,128,256,512]
+
+I will test max_samples passed to each tree, the number of samples to draw from X to train each base estimator. I'll try the fractions max_samples=[0.1,0.3,0.5,0.7,0.9]

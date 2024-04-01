@@ -1,0 +1,3 @@
+Use married population in customer_personality_analysis data set. 
+
+Use knn classifier

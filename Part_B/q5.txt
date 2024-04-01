@@ -1,0 +1,11 @@
+Knn with custom neighbor counts can be called in python as follow, all other default parameters will not influence the model performance.
+
+from sklearn.neighbors import KNeighborsClassifier
+neigh = KNeighborsClassifier(n_neighbors=3,n_jobs=-1)
+neigh.fit(X, y)
+
+Random forest with customized number of tree and max_samples can be called as follow, all other default parameters will not influence the model performance.
+
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier(n_estimators=2, criterion='gini',max_samples=0.3,n_jobs=-1)
+clf.fit(X, y)

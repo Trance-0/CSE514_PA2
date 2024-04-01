@@ -1,0 +1,28 @@
+Are any of them categorical? normally distributed? Which ones?
+
+Categorical data:
+["Education", "Marital_Status"]
+
+Numerical data:
+[
+    "Year_Birth",
+    "Income",
+    "Kidhome",
+    "Teenhome",
+    "Recency",
+    "MntWines",
+    "MntFruits",
+    "MntMeatProducts",
+    "MntFishProducts",
+    "MntSweetProducts",
+    "MntGoldProds",
+    "NumDealsPurchases",
+    "NumWebPurchases",
+    "NumCatalogPurchases",
+    "NumStorePurchases",
+    "NumWebVisitsMonth",
+    "Complain"
+]
+
+Normally distributed data:
+["Year_Birth", "Recency"]

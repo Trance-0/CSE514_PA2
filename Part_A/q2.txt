@@ -1,0 +1,20 @@
+A binary classification model could be fit to this dataset.
+
+1. Pick a response variable:
+
+    Income level
+
+2. Who would want this model and why? What kind of "action" would they be able to take in order to increase profit, prevent future losses, or gain some other benefit?
+
+    A model that can classify the income level of each user from marketing dataset could be useful for various stakeholders, including:
+
+    - Marketing and advertising companies:
+        - These companies could use such a model to segment their target audience more effectively based on predicted income levels.
+        - They could tailor their marketing campaigns, messaging, and advertising content to resonate better with different income groups, increasing the likelihood of successful conversions and sales.
+    - E-commerce and retail businesses:
+        - By predicting customers' income levels, these businesses could personalize product recommendations, promotions, and user experiences accordingly.
+        - They could offer more relevant products, services, or content to different customer segments, improving customer satisfaction and potentially increasing sales.
+
+3. Give a reason for training multiple models for the same problem:
+
+    Ensemble Learning and Model Averaging: By training diverse models, such as k-nearest neighbors, artificial neural networks, decision trees, random forests, naive Bayes classifiers, and support vector machines (SVMs), we can combine their predictions through ensemble learning techniques like bagging, boosting, or stacking. Ensemble methods often outperform individual models by leveraging the strengths of each model and compensating for their weaknesses, leading to improved accuracy and robustness.

@@ -1,0 +1,7 @@
+k-nearest neighbors is better than naive-bayes classifier because 
+- it can be used to fit non linear relationships.
+- it is easy to implement and interpret.
+
+Random forest is better than decision-tree because 
+- it uses ensemble learning by averaging to improve the predictive accuracy and control over-fitting. 
+- each of the tree is easy to explain.

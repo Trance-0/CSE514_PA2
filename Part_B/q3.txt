@@ -1,0 +1,7 @@
+k-nearest neighbors has following weakness comparing to naive-bayes classifier because 
+- it need to run with the data set, which required more storage than naive-bayes classifier
+- it generally has longer training time.
+
+Random forest has following weakness comparing to  decision-tree because 
+- generally has longer training time.
+- generally requires more storage required comparing to decision

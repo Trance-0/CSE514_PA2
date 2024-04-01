@@ -1,0 +1,11 @@
+We choose the third option
+
+First we split up the income level by median in the sample data set (around 50000)
+
+Then use the second option to split the population to three by maternal status:
+
+In long-time relationship [Married, Together]
+Not in long-time relationship [YOLO, Alone, Single]
+Lost partner from long-time relationship [Divorced, Widow, Absurd]
+
+We want to try to classify these population's income level based on other data provided.
