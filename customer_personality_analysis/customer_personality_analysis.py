@@ -4,6 +4,7 @@ call function init to get raw, well-defined complete dataset.
 
 the code using this module to import the data should have the following structure
 
+```filetree
 - project_folder
     - data
         - __init__.py
@@ -11,8 +12,9 @@ the code using this module to import the data should have the following structur
         - marketing_campaign.csv
     - part_A
         - your_code.py
+```
 
-and in `your_code`.py, import the module using the example code follow:
+and in `your_code.py`, import the module using the example code follow:
 
 ```python
 
@@ -90,10 +92,45 @@ class customer_personality_analysis:
             "Dt_Customer",
         ]
 
-    def one_hot_encode(self,bisected_data=False):
-        """ returns one-hot encoded categorical value for the 
-        
+    def numerical_encode(self,df=None,bisected_data=False):
+        """ returns numerical encoded categorical value for customer
+
+        Args:
+            df: dataframe with the same column as defined in this class, self.df by default
+            bisected_data: whether the data is already bisected by income level and split to different populations.
+
+        Returns:
+            "data": numerical encoded self.df as DataFrame, to preserve the column names
+            "numerical": self.numerical,
+            "categorical": self.categorical,
         """
+        encoded_df=self.df.copy()
+        if (df is not None):
+            encoded_df=df.copy()
+        print(encoded_df.head())
+        # Convert education by cycle of education, ordinal encoding, Master and under grads a
+        encoded_df['Education'] = encoded_df['Education'].replace({'Basic': 1, '2n Cycle': 2, 'Graduation': 2,'PhD': 3, 'Master': 2})
+        # Convert Dt_customer by day of join
+        encoded_df['Dt_Customer']=pd.to_datetime(encoded_df['Dt_Customer'], format='%d-%m-%Y')
+        encoded_df['Dt_Customer'] = pd.to_timedelta(encoded_df['Dt_Customer'].max()-encoded_df['Dt_Customer']).dt.total_seconds().astype(int)
+        # one-hot encoding for marital status and income level (if exists)
+        # If data is bisected, we don't need marital status column anymore.
+        if not bisected_data:
+            # get the dummies and store it in a variable
+            dummies = pd.get_dummies(encoded_df['Marital_Status'])
+            # Concatenate the dummies to original dataframe
+            encoded_df= pd.concat([encoded_df, dummies], axis=1)
+        # encode income level
+        else:
+            encoded_df['Income_level'].replace(['hi', 'low'],
+                        [1,0], inplace=True)
+            # encoded_df=encoded_df.drop(['Income_level'])
+        encoded_df=encoded_df.drop(['Marital_Status'],axis=1)
+        return {
+            "data": encoded_df,
+            "numerical": self.numerical_split_population if bisected_data else self.numerical,
+            "categorical": self.categorical_split_population if bisected_data else self.numerical,
+        }
 
     def data(self):
         """return packed dictionary of data

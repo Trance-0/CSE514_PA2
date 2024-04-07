@@ -21,8 +21,11 @@ Zheyuan Wu:
 
 ### import dataset
 
-the code using this module to import the data should have the following structure
+The code using this module to import the data should have the following structure
 
+preprocessing techniques are applied in data import module, include dropping na and one-hot encoding for categorical values.
+
+```filepath
 - project_folder
     - data
         - __init__.py
@@ -30,8 +33,9 @@ the code using this module to import the data should have the following structur
         - marketing_campaign.csv
     - part_A
         - your_code.py
+```
 
-and in `your_code`.py, import the module using the example code follow:
+and in `your_code.py`, import the module using the example code follow:
 
 ```python
 
