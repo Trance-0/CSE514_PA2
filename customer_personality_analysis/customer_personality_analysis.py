@@ -31,6 +31,7 @@ cpa_data = customer_personality_analysis().data()
 import os
 from pathlib import Path
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 
 
 class customer_personality_analysis:
@@ -203,3 +204,28 @@ class customer_personality_analysis:
             "numerical": self.numerical_split_population,
             "categorical": self.categorical_split_population,
         }
+
+    def prepared_standardize_data(self, data_name="married", debug = False):
+
+        data = []
+        if data_name == "married":
+            data = self.married_data()['data']
+        elif data_name == "partner_loss":
+            data = self.partner_loss_data()['data']
+        else:
+            data = self.single_data()['data']
+
+        cpa_data = self.numerical_encode(data, bisected_data=True)['data']
+
+        X = cpa_data.iloc[:, :-1].values
+        y = cpa_data.iloc[:, -1].values
+
+        scaler = StandardScaler()
+        X = scaler.fit_transform(X)
+
+        if debug:
+            print(X, y)
+
+        return X, y
+
+
