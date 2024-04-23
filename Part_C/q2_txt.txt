@@ -1,0 +1,11 @@
+SVM best: C =1, kernel = linear
+For the SVM model:
+C = 1: The parameter C is a regularization parameter that helps control the trade-off between achieving a low error on the training data and minimizing the model complexity for better generalization. A C value of 1 provides a good balance, preventing the model from fitting the training data too closely (overfitting).
+Kernel = Linear: The linear kernel is simple and effective for linearly separable data. Using a linear kernel often requires less computation and avoids the risk of overfitting when the data is not complex.
+
+ANN best: unit = 5, activation = relu, lr = 0.01, batch_size = 16.
+For the ANN model:
+Units = 5: This refers to the number of neurons in the hidden layer. Having 5 units is a choice that can capture sufficient complexity in the data without overcomplicating the model, which can help in avoiding overfitting and reducing computational demand.
+Activation = ReLU (Rectified Linear Unit): ReLU is a popular activation function because it introduces non-linearity into the model without affecting the gradients too much, which helps in avoiding the vanishing gradient problem common with other activation functions like sigmoid or tanh.
+Learning Rate = 0.01: This is a moderate learning rate that helps ensure the model learns at a reasonable pace; not too fast to skip optimal solutions, and not too slow to impede the learning process.
+Batch Size = 16: This batch size is small enough to allow the model to update its weights frequently, which can lead to faster convergence. Small batches can also provide a regularizing effect and lower the risk of overfitting.

@@ -32,6 +32,7 @@ import os
 from pathlib import Path
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 
 
 class customer_personality_analysis:
@@ -205,7 +206,7 @@ class customer_personality_analysis:
             "categorical": self.categorical_split_population,
         }
 
-    def prepared_standardize_data(self, data_name="married", debug = False):
+    def prepared_standardize_data(self, data_name="married", debug=False):
 
         data = []
         if data_name == "married":
@@ -228,4 +229,14 @@ class customer_personality_analysis:
 
         return X, y
 
+    def prepare_reduced_data(self, data_name="married"):
+
+        cpa = customer_personality_analysis()
+        X, y = cpa.prepared_standardize_data(data_name=data_name, debug=False)
+
+
+        pca = PCA(n_components=9)
+        X_pca = pca.fit_transform(X)
+
+        return X_pca, y
 
