@@ -1,0 +1,28 @@
+ANN:
+'accuracy': 0.8921052631578947, 'time': 0.9544680118560791
+SVM:
+accuracy: 0.89, time:  0.0070
+KNN:
+accuracy: 0.87
+Training time: 0.0020 seconds
+
+RFC:
+accuracy:0.91
+Training time: 1.0349 seconds
+
+--------------------------------
+
+ANN:
+Final Model Performance: Accuracy - 0.8646, time - 0.2323445
+SVM:
+accuracy: 0.9, time: 0.0070
+
+KNN:
+Best parameters: {'n_neighbors': 33}
+Best cross-validation score: 0.90
+Prediction time: 0.0461 seconds
+
+RFC:
+Best parameters: {'max_samples': 0.9, 'n_estimators': 512}
+Best cross-validation score: 0.92
+Prediction time: 1.1558 seconds

@@ -1,0 +1,38 @@
+ANN:
+Best hyperparameters: {'units': 10, 'activation': 'tanh', 'learning_rate': 0.01, 'epochs': 20, 'batch_size': 16}
+SVM:
+Best hyperparameters: {'C': 10, 'kernel': 'poly'}
+KNN:
+Best parameters: {'n_neighbors': 3}
+RFC:
+Best parameters: {'max_samples': 0.9, 'n_estimators': 16}
+
+------------------------
+
+ANN:
+accuracy: 0.8933693403815214, time: 2.9526216983795166
+SVM:
+accuracy: 0.91, time: 0.0120
+
+KNN:    
+accuracy: 0.86
+Training time: 0.0000 seconds
+
+RFC:
+accuracy: 0.89
+Training time: 0.0427 seconds
+
+-------------------------
+
+ANN:
+Final Model Performance: Accuracy - 0.9056, time - 0.273452345
+SVM:
+accuracy: 0.89, time: 0.0140
+
+KNN:
+accuracy: 0.83
+Prediction time: 0.0310 seconds
+
+RFC:
+accuracy: 0.91
+Prediction time: 0.0657 seconds

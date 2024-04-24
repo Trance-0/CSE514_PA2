@@ -1,0 +1,34 @@
+SVM：
+Training time: 0.0110 seconds
+Precision: 0.92
+
+ANN:
+Training time: 2.94 seconds
+Precision: 0.93
+
+KNN:
+Training time: 0.0000 seconds
+Precision: 0.90
+
+RFC:
+Training time: 0.1406 seconds
+Precision: 0.93
+
+-----------------------
+
+
+SVM:
+Prediction time: 0.0130 seconds
+Precision: 0.91
+
+ANN:
+Prediction time: 0.24 seconds
+Precision: 0.92
+
+KNN:
+Prediction time: 0.0088 seconds
+Precision: 0.89
+
+RFC:
+Prediction time: 0.9389 seconds
+Precision: 0.91

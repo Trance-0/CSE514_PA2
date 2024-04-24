@@ -6,7 +6,7 @@ the code using this module to import the data should have the following structur
 
 ```filetree
 - project_folder
-    - data
+    - customer_personality_analysis
         - __init__.py
         - customer_personality_analysis.py
         - marketing_campaign.csv

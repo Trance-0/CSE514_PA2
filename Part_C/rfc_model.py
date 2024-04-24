@@ -1,28 +1,14 @@
-# -*- coding: utf-8 -*-
-# File : svm_model.py
-# Time : 2024/4/10 10:22 
-# Author : Dijkstra Liu
-# Email : l.tingjun@wustl.edu
-# 
-# 　　　    /＞ —— フ
-# 　　　　　| `_　 _ l
-# 　 　　　ノ  ミ＿xノ
-# 　　 　 /　　　 　|
-# 　　　 /　 ヽ　　ﾉ
-# 　 　 │　　|　|　\
-# 　／￣|　　 |　|　|
-#  | (￣ヽ＿_ヽ_)__)
-# 　＼_つ
-#
-# Description:
-# This is the SVM model, testing in 5-Fold method.
+"""
+with the same testing as Dijkstra
+"""
+
 import time
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
-from sklearn.model_selection import GridSearchCV, train_test_split, cross_val_score, StratifiedKFold
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.metrics import classification_report
 
 # import in vscode
 import os
@@ -40,12 +26,14 @@ from customer_personality_analysis import customer_personality_analysis
 cpa = customer_personality_analysis()
 
 # Prepare and standardize the data
-# X, y = cpa.prepare_reduced_data(data_name="single")
-X, y = cpa.prepare_reduced_data(data_name="married")
+# X, y = cpa.prepared_standardize_data(data_name="single")
+# X, y = cpa.prepared_standardize_data(data_name="partner_loss")
+X, y = cpa.prepared_standardize_data(data_name="married")
 
+SEED=32
 
 # Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=SEED)
 
 # Initialize the StandardScaler
 scaler = StandardScaler()
@@ -53,10 +41,10 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 # Define the model and the grid of hyperparameters to search over
-model = SVC(random_state=42)
+model = RandomForestClassifier(n_jobs=-1)
 param_grid = {
-    'C': [0.1, 1, 10, 100],
-    'kernel': ['linear', 'poly', 'rbf', 'sigmoid']
+    'n_estimators':[1,2,4,8,16,32,64,128,256,512,1024],
+    'max_samples':[0.1,0.3,0.5,0.7,0.9]
 }
 
 # Perform grid search with 5-fold cross-validation

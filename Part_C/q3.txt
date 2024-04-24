@@ -1,0 +1,33 @@
+SVM:
+Training time: 0.0020 seconds
+Precision: 0.84
+
+ANN:
+Training time: 0.24 seconds
+Precision: 0.94
+
+KNN:
+Training time: 0.0000 seconds
+Precision: 0.88
+
+RFC:
+Training time: 0.4865 seconds
+Precision: 0.90
+
+-----------------------------
+
+SVM:
+Best parameters: {'C': 100, 'kernel': 'rbf'}
+Precision: 0.92
+
+ANN:
+Best hyperparameters: {'units': 5, 'activation': 'relu', 'learning_rate': 0.1, 'epochs': 20, 'batch_size': 16, 'accuracy': 0.9125909752547308, 'time': 2.878108024597168}
+Precision: 0.91
+
+KNN:
+Best parameters: {'n_neighbors': 33}
+Best cross-validation score: 0.86
+
+RFC:
+Best parameters: {'max_samples': 0.7, 'n_estimators': 256}
+Best cross-validation score: 0.8
